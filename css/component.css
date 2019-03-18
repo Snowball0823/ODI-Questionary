@@ -625,7 +625,7 @@ button.fs-continue,
 button.fs-submit,
 button.fs-continue {
 	padding: 0.6em 1.5em;
-	border: 3px solid #232529;
+	border: 4px solid #232529;
 	border-radius: 40px;
 	font-weight: 700;
 	color: rgba(0,0,0,0.4);
@@ -838,25 +838,25 @@ input[type=text]::-ms-clear {
 
 	button.fs-continue {
 		right: 20px;
-		bottom: 20px;
+		bottom: 5px;
 		margin: 0;
-		padding: 50px 0 0 50px;
-		width: 50px;
-		height: 50px;
-		border-radius: 50%;
+		padding: 70px 0 0 70px;
+		width: 70px;
+		height: 70px;
+		border-radius: 80%;
 		font-size: 2em;
 	}
 
 	button.fs-continue::before {
 		position: absolute;
-		top: 0;
+		top: 15px;
 		left: 0;
 		width: 100%;
 		height: 100%;
 		content: '\27A2';
 		text-align: center;
-		font-size: 1em;
-		line-height: 50px;
+		font-size: 2em;
+		line-height: 40px;
 	}
 
 	.fs-continue::after {
