@@ -280,23 +280,23 @@
 						<label class="fs-field-label fs-anim-upper" for="q14">请问如果疼痛程度用0-10分来量化，0分为不疼，10分为极限疼</label>
 						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
 							<span><label class="fs-field-label fs-anim-upper" for="q14a">走路时疼痛程度</label>
-								<input class="fs-mark fs-anim-lower" id="q14a" name="q14a" type="number" placeholder="0" step="1" min="0" max="10" /></span>
+								<input class="fs-mark fs-anim-lower" id="q14a" name="q14a" type="number" placeholder="0" step="1" min="0" max="10" value="0"/></span>
 							<span><label class="fs-field-label fs-anim-upper" for="q14b">坐姿时疼痛程度</label>
-								<input class="fs-mark fs-anim-lower" id="q14b" name="q14b" type="number" placeholder="0" step="1" min="0" max="10" /></span>
+								<input class="fs-mark fs-anim-lower" id="q14b" name="q14b" type="number" placeholder="0" step="1" min="0" max="10" value="0"/></span>
 							<span><label class="fs-field-label fs-anim-upper" for="q14c">站姿时疼痛程度</label>
-								<input class="fs-mark fs-anim-lower" id="q14c" name="q14c" type="number" placeholder="0" step="1" min="0" max="10" /></span>
+								<input class="fs-mark fs-anim-lower" id="q14c" name="q14c" type="number" placeholder="0" step="1" min="0" max="10" value="0"/></span>
 							<span><label class="fs-field-label fs-anim-upper" for="q14d">一天平均疼痛程度</label>
-								<input class="fs-mark fs-anim-lower" id="q14d" name="q14d" type="number" placeholder="0" step="1" min="0" max="10" /></span>
+								<input class="fs-mark fs-anim-lower" id="q14d" name="q14d" type="number" placeholder="0" step="1" min="0" max="10" value="0"/></span>
 						</div>
 					</li>
 
 					<li>
 						<label class="fs-field-label fs-anim-upper" for="q15" data-info="我们保证不会泄漏个人信息">输入身份证后6位</label>
-						<input class="fs-anim-lower" id="q15" name="q15" type="number" placeholder="请输入身份证后6位" step="1" min="100000" max="999999"/>
+						<input class="fs-anim-lower" id="q15" name="q15" placeholder="请输入身份证后6位" pattern="[0-9]{5}([0-9]|x)" title="输入身份证后6位，有的是“X”"required/>
 					</li>
 
 				</ol><!-- /fs-fields -->
-				<button class="fs-submit" type="submit">提交问卷</button>
+				<button class="fs-submit" id='subButton' type="submit">提交问卷</button>
 			</form><!-- /fs-form -->
 		</div><!-- /fs-form-wrap -->
 
@@ -304,6 +304,7 @@
 	<script src="js/classie.js"></script>
 	<script src="js/selectFx.js"></script>
 	<script src="js/fullscreenForm.js"></script>
+	<script src="js/jquery.js"></script>
 	<script>
 		(function () {
 			var formWrap = document.getElementById('fs-form-wrap');

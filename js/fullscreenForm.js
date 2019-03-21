@@ -69,9 +69,9 @@
 		ctrlNavPosition: true,
 		// reached the review and submit step
 		onReview: function () {
-			return false;
+			return true;
 		}
-	};
+	}
 
 	/**
 	 * init function
@@ -80,6 +80,11 @@
 	FForm.prototype._init = function () {
 		// the form element
 		this.formEl = this.el.querySelector('form');
+
+		//console.log(this.formEl.getElementsByClassName('fs-submit'));
+		//the submit button
+		this.submitBt = this.formEl.querySelector('button.fs-submit');
+		//console.log(this.submitBt.visibilityState);
 
 		// list of fields
 		this.fieldsList = this.formEl.querySelector('ol.fs-fields');
@@ -104,7 +109,128 @@
 
 		// init events
 		this._initEvents();
-	};
+
+		//submit questionary
+		this._submitQuestionary();
+	}
+
+	/**
+	 * add submit function to deliver info
+	 */
+	FForm.prototype._submitQuestionary = function () {
+		var self = this;
+		//self._deliverDatas();
+		//while (label) {
+		this.submitBt.addEventListener('click', function () {
+			//console.log(self.submitBt.visibilityState);
+			self._deliverDatas();
+		});
+		//}
+	}
+
+	/**
+	 * deliver form datas to php
+	 */
+	FForm.prototype._deliverDatas = function () {
+		//console.log(this.submitBt.style.display);
+		var radioAnswers = new Array(),
+			numberAnswers = new Array(),
+			index_Radio = 0,
+			index_Number = 0,
+			patientName,
+			patientSex,
+			patientID,
+			returnLable = true;
+		patientName = this.formEl.querySelector('input[name="q1"]').value;
+		patientSex = this.formEl.querySelector('input[name="q2"]').value;
+		patientID = this.formEl.querySelector('input[name="q15"]').value;
+		if (!this.formEl.querySelector('input[name="q15"]').checkValidity()) {
+			returnLable = false;
+		}
+		(function (obj) {
+			var error;
+			for (var tmp in obj) {
+				if (tmp == obj.length - 1) {
+					if (
+						(obj[tmp] > "9" || obj[tmp] < "0") &&
+						(obj[tmp] != "X" && obj[tmp] != "x")
+					) {
+						error = 'ID Error';
+						break;
+					}
+				} else {
+					if ((obj[tmp] > "9" || obj[tmp] < "0")) {
+						error = 'ID Error';
+						break;
+					}
+				}
+			}
+			var message = '';
+			switch (error) {
+				case 'NOVAL':
+					message = '请务必输入此信息';
+					break;
+				case 'Length Error':
+					message = '请输入6位数字';
+					break;
+				case 'ID Error':
+					message = '请输入正确的身份证后6位数字，中间不存在字母，最后有可能是“X”';
+					break;
+			};
+			if (message != '') {
+				window.alert(message);
+				returnLable = false;
+			}
+		})(patientID);
+		[].slice.call(this.formEl.querySelectorAll('input[type="radio"]')).forEach(function (inp) {
+			if (inp.checked) {
+				radioAnswers[index_Radio] = parseInt(inp.value[inp.value.length - 1]);
+				index_Radio++;
+			}
+		});
+		[].slice.call(this.formEl.querySelectorAll('input[type="number"]')).forEach(function (inp) {
+			if (inp.checkValidity()) {
+				numberAnswers[index_Number] = parseInt(inp.value);
+				index_Number++;
+			} else {
+				returnLable = false;
+			}
+		});
+		var show_all = function (obj) {
+			for (var x in obj) {
+				console.log(x + obj[x]);
+			}
+		};
+		//show_all(radioAnswers);
+		if (returnLable) {
+			//console.log("name:" + patientName + ",sex:" + patientSex + ",ID:" + patientID);
+			//show_all(numberAnswers);
+			$.ajax({
+				async: true,
+				cache: false,
+				type: 'POST',
+				url: "/php/deliver.php",
+				data: {
+					name: patientName,
+					sex: patientSex,
+					id: patientSex,
+					radios: JSON.stringify(radioAnswers),
+					numbers: JSON.stringify(numberAnswers)
+				},
+				traditional: true,
+				beforeSend: function () {
+					console.log("name:" + patientName + ",sex:" + patientSex + ",ID:" + patientID);
+					show_all(numberAnswers);
+				},
+				success: function (result) {
+					console.log(result);
+					//open(location, '_self').close();
+				}
+			});
+		} else {
+			return false;
+		}
+	}
 
 	/**
 	 * addControls function
@@ -245,16 +371,22 @@
 					ev.preventDefault();
 					self._nextField();
 				}
-			}
+			} //else if (this.submitBt.display != )
 		});
-	};
+	}
 
 	/**
 	 * nextField function
 	 * jumps to the next field
 	 */
 	FForm.prototype._nextField = function (backto) {
+		/*if (this.isLastStep ){
+			window.close();
+			return true;
+		}*/
 		if (this.isLastStep || !this._validade() || this.isAnimating) {
+			//this.isLastStep ||
+			//window.close();
 			return false;
 		}
 		this.isAnimating = true;
@@ -326,7 +458,6 @@
 					self.options.onReview();
 				} else {
 					classie.remove(nextField, 'fs-show');
-
 					if (self.options.ctrlNavPosition) {
 						self.ctrlFldStatusCurr.innerHTML = self.ctrlFldStatusNew.innerHTML;
 						self.ctrlFldStatus.removeChild(self.ctrlFldStatusNew);
@@ -448,6 +579,10 @@
 					//window.alert(checked);
 				} else if (input.type === 'text') {
 					if (input.id === 'q2') {
+						if (input.value === '') {
+							error = 'NOVAL';
+							break;
+						}
 						for (var x in sexs) {
 							if (input.value === sexs[x]) {
 								label = true;
@@ -455,25 +590,40 @@
 							}
 						}
 						if (!label) {
-							error = 'sex error';
+							error = 'SEX Error';
 							break;
+						}
+					} else if (input.id === 'q15') {
+						if (input.value === '') {
+							error = 'NOVAL';
+							break;
+						}
+						if (input.value.length != 6) {
+							error = 'Length Error';
+							break;
+						}
+						for (var tmp in input.value) {
+							//console.log(tmp, input.value[tmp]);
+							if (tmp == input.value.length - 1) {
+								if (
+									(input.value[tmp] > "9" || input.value[tmp] < "0") &&
+									(input.value[tmp] != "X" && input.value[tmp] != "x")
+								) {
+									error = 'ID Error';
+									//console.log('finalError');
+									break;
+								}
+							} else {
+								if ((input.value[tmp] > "9" || input.value[tmp] < "0")) {
+									error = 'ID Error';
+									break;
+								}
+							}
 						}
 					} else {
 						if (input.value === '') {
 							error = 'NOVAL';
 							break;
-						}
-					}
-				} else if (input.type === 'number') {
-					if (input.id === 'q15') {
-						if (input.value.length !== 6) {
-							error = "Length Error"
-							break;
-						} else {
-							if (input.value === '') {
-								error = 'NOVAL';
-								break;
-							}
 						}
 					}
 				}
@@ -511,10 +661,15 @@
 			case 'INVALIDEMAIL':
 				message = '请输入有用的邮箱';
 				break;
-			case 'sex error':
+			case 'SEX Error':
 				message = '请输入正确的性别（男或女）';
+				break;
 			case 'Length Error':
 				message = '请输入6位数字';
+				break;
+			case 'ID Error':
+				message = '请输入正确的身份证后6位数字，中间不存在字母，最后有可能是“X”';
+				break;
 				// ...
 		};
 		this.msgError.innerHTML = message;
