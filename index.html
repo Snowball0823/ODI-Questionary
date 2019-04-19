@@ -305,10 +305,14 @@
 	<script src="js/selectFx.js"></script>
 	<script src="js/fullscreenForm.js"></script>
 	<script src="js/jquery.js"></script>
+	<script src="js/Blob.js"></script>
+	<script src="js/kindeditor-all.js"></script>
+	<script src="js/FileSaver.js"></script>
 	<script>
 		(function () {
 			var formWrap = document.getElementById('fs-form-wrap');
-
+			
+			//select module creat
 			[].slice.call(document.querySelectorAll('select.cs-select')).forEach(function (el) {
 				new SelectFx(el, {
 					stickyPlaceholder: false,
