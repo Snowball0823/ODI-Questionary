@@ -127,16 +127,7 @@
 		});
 		//}
 	}
-	/**
-	 * save html 2 word
-	 */
-	FForm.prototype._saveHtml2Word = function () {
-		//var test = document.getElementsByTagName('html')[0].outerHTML;
-		//console.log(test);
-		//var kindeditor = window.editor;
-		//var html = kindeditor.html();
-		//console.log(html);
-	}
+
 	/**
 	 * deliver form datas to php
 	 */
@@ -710,5 +701,4 @@
 
 	// add to global namespace
 	window.FForm = FForm;
-
 })(window);

@@ -97,7 +97,8 @@
 						<input class="fs-mark fs-anim-lower" id="q5" name="q5" type="number" placeholder="1000" step="100" min="100" />
 					</li>-->
 					<li data-input-trigger>
-						<label class="fs-field-label fs-anim-upper" for="q4" data-info="这能帮助我们收集信息">个人护理（如，梳洗、穿衣、如厕、洗澡等）</label>
+						<label class="fs-field-label fs-anim-upper" for="q4"
+							data-info="这能帮助我们收集信息">个人护理（如，梳洗、穿衣、如厕、洗澡等）</label>
 						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
 							<span><input id="q4a" name="q4" type="radio" value="self_0" />
 								<label for="q4a" class="radio-4-1">生活完全自理,无任何疼痛</label></span>
@@ -223,7 +224,8 @@
 					</li>
 
 					<li data-input-trigger>
-						<label class="fs-field-label fs-anim-upper" for="q11" data-info="这能帮助我们收集信息">社交生活（应酬、聚会、舞会等）</label>
+						<label class="fs-field-label fs-anim-upper" for="q11"
+							data-info="这能帮助我们收集信息">社交生活（应酬、聚会、舞会等）</label>
 						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
 							<span><input id="q11a" name="q11" type="radio" value="social_0" />
 								<label for="q11a" class="radio-11-1">社交生活正常，不会引发疼痛</label></span>
@@ -241,7 +243,8 @@
 					</li>
 
 					<li data-input-trigger>
-						<label class="fs-field-label fs-anim-upper" for="q12" data-info="这能帮助我们收集信息">旅行/外出（购物、游玩）</label>
+						<label class="fs-field-label fs-anim-upper" for="q12"
+							data-info="这能帮助我们收集信息">旅行/外出（购物、游玩）</label>
 						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
 							<span><input id="q12a" name="q12" type="radio" value="travel_0" />
 								<label for="q12a" class="radio-12-1">经常外出或旅行,不会引发疼痛</label></span>
@@ -280,26 +283,30 @@
 						<label class="fs-field-label fs-anim-upper" for="q14">请问如果疼痛程度用0-10分来量化，0分为不疼，10分为极限疼</label>
 						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
 							<span><label class="fs-field-label fs-anim-upper" for="q14a">走路时疼痛程度</label>
-								<input class="fs-mark fs-anim-lower" id="q14a" name="q14a" type="number" placeholder="0" step="1" min="0" max="10" value="0"/></span>
+								<input class="fs-mark fs-anim-lower" id="q14a" name="q14a" type="number" placeholder="0"
+									step="1" min="0" max="10" value="0" /></span>
 							<span><label class="fs-field-label fs-anim-upper" for="q14b">坐姿时疼痛程度</label>
-								<input class="fs-mark fs-anim-lower" id="q14b" name="q14b" type="number" placeholder="0" step="1" min="0" max="10" value="0"/></span>
+								<input class="fs-mark fs-anim-lower" id="q14b" name="q14b" type="number" placeholder="0"
+									step="1" min="0" max="10" value="0" /></span>
 							<span><label class="fs-field-label fs-anim-upper" for="q14c">站姿时疼痛程度</label>
-								<input class="fs-mark fs-anim-lower" id="q14c" name="q14c" type="number" placeholder="0" step="1" min="0" max="10" value="0"/></span>
+								<input class="fs-mark fs-anim-lower" id="q14c" name="q14c" type="number" placeholder="0"
+									step="1" min="0" max="10" value="0" /></span>
 							<span><label class="fs-field-label fs-anim-upper" for="q14d">一天平均疼痛程度</label>
-								<input class="fs-mark fs-anim-lower" id="q14d" name="q14d" type="number" placeholder="0" step="1" min="0" max="10" value="0"/></span>
+								<input class="fs-mark fs-anim-lower" id="q14d" name="q14d" type="number" placeholder="0"
+									step="1" min="0" max="10" value="0" /></span>
 						</div>
 					</li>
 
 					<li>
 						<label class="fs-field-label fs-anim-upper" for="q15" data-info="我们保证不会泄漏个人信息">输入身份证后6位</label>
-						<input class="fs-anim-lower" id="q15" name="q15" placeholder="请输入身份证后6位" pattern="[0-9]{5}([0-9]|x)" title="输入身份证后6位，有的是“X”"required/>
+						<input class="fs-anim-lower" id="q15" name="q15" placeholder="请输入身份证后6位"
+							pattern="[0-9]{5}([0-9]|x)" title="输入身份证后6位，有的是“X”" required />
 					</li>
 
 				</ol><!-- /fs-fields -->
 				<button class="fs-submit" id='subButton' type="submit">提交问卷</button>
 			</form><!-- /fs-form -->
 		</div><!-- /fs-form-wrap -->
-
 	</div><!-- /container -->
 	<script src="js/classie.js"></script>
 	<script src="js/selectFx.js"></script>
@@ -311,7 +318,7 @@
 	<script>
 		(function () {
 			var formWrap = document.getElementById('fs-form-wrap');
-			
+
 			//select module creat
 			[].slice.call(document.querySelectorAll('select.cs-select')).forEach(function (el) {
 				new SelectFx(el, {

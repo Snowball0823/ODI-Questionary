@@ -153,10 +153,9 @@ button,
 select {
     text-transform: none;
 }
-
+/*input[type="reset"],*/
 button,
 html input[type="button"],
-input[type="reset"],
 input[type="submit"] {
     -webkit-appearance: button;
     cursor: pointer;
