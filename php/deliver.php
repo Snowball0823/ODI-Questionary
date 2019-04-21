@@ -1,6 +1,6 @@
 <pre>
 <?php
-error_reporting(E_ALL || ~E_NOTICE);
+//error_reporting(E_ALL || ~E_NOTICE);
 require_once("db_config.php");
 
 function check_connect()
@@ -9,7 +9,8 @@ function check_connect()
         $error = mysqli_connect_error() . "\\n";
         $error = $error . "连接失败...\\n";
         $error = $error . "请检查数据库连接以及PHP配置，再点确定刷新次页面";
-        echo '<script> {window.alert("' . $error . '");location.href="index_php.php"} </script>';
+        //echo '<script> {window.alert("' . $error . '");location.href="index_php.php"} </script>';
+        report_error($error);
         return false;
     }
     return true;
@@ -137,6 +138,10 @@ $_id = $_POST["id"];
 $_radios = json_decode($_POST["radios"]);
 $_numbers = json_decode($_POST["numbers"]);
 
+$final_answer_array = array_merge(array($_name, $_sex), $_radios, $_numbers, array($_id));
+print_r($final_answer_array);
+$q_quarry = array('a', 'b', 'c', 'd', 'e', 'f');
+
 $finalResult = false;
 
 $mysqli = new mysqli($mysql_server_name, $mysql_username, $mysql_password); //default port 3306
@@ -144,7 +149,8 @@ $mysqli = new mysqli($mysql_server_name, $mysql_username, $mysql_password); //de
 $mysqli->set_charset("utf8"); //或者 $mysqli->query("set names 'utf8'")
 //面向对象的昂视屏蔽了连接产生的错误，需要通过函数来判断
 $table_info = "(
-        patien_id  int(11) UNSIGNED NOT NULL PRIMARY KEY,
+        private_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        patien_id  int(11) UNSIGNED NOT NULL,
         name varchar(100) NOT NULL,
         sex  varchar(2) NOT NULL,
         pain int(11) NOT NULL,
@@ -179,8 +185,31 @@ if (check_connect()) {
             $_data_time = 'now()';
             $final_data = $_id . ",'" . $_name . "'" . ",'" . $_sex . "'" . "," .
                 $_string_radios . "," . $_string_numbers . "," . $_data_time;
-            //insert_data($mysqli, $mysql_table, $data_label, $final_data);
+            insert_data($mysqli, $mysql_table, $data_label, $final_data);
             echo $final_data;
+            $file_name = '../' . $_name . '_' . date('Y-m-d') . time() . ".html";
+            echo copy($tamplate_file, $file_name);
+            $html_dom = new DOMDocument;
+            $html_dom->loadHTMLFile($file_name);
+            for ($i = 1; $i <= 15; $i++) {
+                if ($i == 1 or $i == 2) {
+                    $q_tmp = $html_dom->getElementById("q" . $i);
+                    //echo $final_answer_array[$i-1];
+                    $q_tmp->setAttribute('placeholder', $final_answer_array[$i - 1]);
+                } elseif (2 < $i and $i < 14) {
+                    $q_tmp = $html_dom->getElementById("q" . $i . $q_quarry[$final_answer_array[$i - 1]]);
+                    $q_tmp->setAttribute('checked', 'checked');
+                } elseif ($i == 14) {
+                    for ($j = 0; $j < 4; $j++) {
+                        $q_tmp = $html_dom->getElementById("q" . $i . $q_quarry[$j]);
+                        $q_tmp->setAttribute('value', $final_answer_array[$i - 1] + $j);
+                    }
+                } elseif ($i == 15) {
+                    $q_tmp = $html_dom->getElementById("q" . $i);
+                    $q_tmp->setAttribute('placeholder', $final_answer_array[$i + 2]);
+                }
+            }
+            $html_dom->saveHTMLFile($file_name);
         } else {
             echo "未创建表，无法操作！\n";
         }

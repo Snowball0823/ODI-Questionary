@@ -151,9 +151,9 @@
 			patientID,
 			returnLable = true;
 		patientName = this.formEl.querySelector('input[name="q1"]').value;
-		this.formEl.querySelector('input[name="q1"]').placeholder = patientName;
+		//this.formEl.querySelector('input[name="q1"]').placeholder = patientName;
 		patientSex = this.formEl.querySelector('input[name="q2"]').value;
-		this.formEl.querySelector('input[name="q2"]').placeholder = patientSex;
+		//this.formEl.querySelector('input[name="q2"]').placeholder = patientSex;
 		patientID = this.formEl.querySelector('input[name="q15"]').value;
 		if (!this.formEl.querySelector('input[name="q15"]').checkValidity()) {
 			returnLable = false;
@@ -196,19 +196,12 @@
 		[].slice.call(this.formEl.querySelectorAll('input[type="radio"]')).forEach(function (inp) {
 			if (inp.checked) {
 				radioAnswers[index_Radio] = parseInt(inp.value[inp.value.length - 1]);
-				//alert(inp.getAttribute("type"));
-				//inp.removeAttribute("type");
-				//inp.type = "text";
-				inp.setAttribute("checked", "checked");
 				index_Radio++;
 			}
 		});
 		[].slice.call(this.formEl.querySelectorAll('input[type="number"]')).forEach(function (inp) {
 			if (inp.checkValidity()) {
 				numberAnswers[index_Number] = parseInt(inp.value);
-				inp.placeholder = inp.value;
-				//alert(inp.getAttribute("value"));
-				inp.setAttribute("value", inp.value);
 				index_Number++;
 			} else {
 				returnLable = false;
@@ -221,32 +214,20 @@
 		};
 		//show_all(radioAnswers);
 		if (returnLable) {
-			this.formEl.querySelector('input[name="q15"]').placeholder = patientID;
+			//this.formEl.querySelector('input[name="q15"]').placeholder = patientID;
 			var tmp_paren_obj = document.querySelector('div[id = "fs-form-wrap"]');
 			var tmp_child_obj = document.querySelector('div[class="fs-controls"]');
 			tmp_paren_obj.removeChild(tmp_child_obj);
 			tmp_paren_obj = document.querySelector('form[id = "myform"]');
 			tmp_child_obj = document.querySelector('button[id="subButton"]');
 			tmp_paren_obj.removeChild(tmp_child_obj);
-
-			var kindeditor = document.documentElement.innerHTML;
-			var fileName = patientName + ".html";
-			console.log(kindeditor);
-			var funDownload = function (content, filename) {
-				// 创建隐藏的可下载链接
-				var eleLink = document.createElement('a');
-				eleLink.download = filename;
-				eleLink.style.display = 'none';
-				// 字符内容转变成blob地址
-				var blob = new Blob([content]);
-				eleLink.href = URL.createObjectURL(blob);
-				// 触发点击
-				document.body.appendChild(eleLink);
-				eleLink.click();
-				// 然后移除
-				document.body.removeChild(eleLink);
-			};
-			funDownload(kindeditor, fileName);
+			//var kindeditor = document.documentElement.innerHTML;
+			//var fileName = patientName+'.html';
+			//console.log(kindeditor);
+			//var blob = new Blob([kindeditor], {
+			//	type: "text/plain;charset=utf-8"
+			//});
+			//saveAs(blob, fileName);
 			//show_all(kindeditor);
 			//this._saveHtml2Word();
 			//console.log("name:" + patientName + ",sex:" + patientSex + ",ID:" + patientID);
@@ -259,7 +240,7 @@
 				data: {
 					name: patientName,
 					sex: patientSex,
-					id: patientSex,
+					id: patientID,
 					radios: JSON.stringify(radioAnswers),
 					numbers: JSON.stringify(numberAnswers)
 				},
@@ -269,8 +250,8 @@
 					show_all(numberAnswers);
 				},
 				success: function (result) {
-					console.log("result");
-					open(location, '_self').close();
+					console.log(result);
+					//open(location, '_self').close();
 				}
 			});
 		} else {
