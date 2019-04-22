@@ -3,12 +3,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>ODI Questionary</title>
-	<link rel="stylesheet" type="text/css" href="css/normalize.css">
-	<link rel="stylesheet" type="text/css" href="css/demo.css">
-	<link rel="stylesheet" type="text/css" href="css/component.css">
-	<link rel="stylesheet" type="text/css" href="css/cs-select.css">
-	<link rel="stylesheet" type="text/css" href="css/cs-skin-boxes.css">
-	<script src="js/modernizr.custom.js"></script>
 </head>
 
 <body cz-shortcut-listen="true" class="overview" style="">
@@ -296,37 +290,15 @@
 				</ol><!-- /fs-fields -->
 				
 			</form><!-- /fs-form -->
+			<li class="">
+				<label class="fs-field-label fs-anim-upper" for="q16" data-info="我们保证不会泄漏个人信息">您的颈椎功能受损指数：</label>
+				<input class="fs-anim-lower" id="q16" name="q16" placeholder="0%" required="">
+			</li>
+			<li class="">
+				<label class="fs-field-label fs-anim-upper" for="q17" data-info="我们保证不会泄漏个人信息">您的结果判断：</label>
+				<input class="fs-anim-lower" id="q17" name="q17" placeholder="轻度功能障碍" required="">
+			</li>
 		<span class="fs-message-error"></span></div><!-- /fs-form-wrap -->
 
 	</div><!-- /container -->
-	<script src="js/classie.js"></script>
-	<script src="js/selectFx.js"></script>
-	<script src="js/fullscreenForm.js"></script>
-	<script src="js/jquery.js"></script>
-	<script src="js/Blob.js"></script>
-	<script src="js/kindeditor-all.js"></script>
-	<script src="js/FileSaver.js"></script>
-	<script>
-		(function () {
-			var formWrap = document.getElementById('fs-form-wrap');
-			
-			//select module creat
-			[].slice.call(document.querySelectorAll('select.cs-select')).forEach(function (el) {
-				new SelectFx(el, {
-					stickyPlaceholder: false,
-					onChange: function (val) {
-						document.querySelector('span.cs-placeholder').style.backgroundColor = val;
-					}
-				});
-			});
-
-			new FForm(formWrap, {
-				onReview: function () {
-					classie.add(document.body, 'overview'); // for demo purposes only
-				}
-			});
-		})();
-	</script>
-
-
-<div id="Vidown_extension_alhnopeoagjmjfgcbnokcnagkecgdcdh" style="display: none;"></div><div id="vidown_float_panel_div" style="display: none;"><a id="vidown_float_panel_download" title="用【维棠】下载视频">维棠下载</a><span id="vidown_float_panel_sep">|</span><input type="button" value=" " id="vidown_float_panel_close" title="关闭"></div></body>
+</body>

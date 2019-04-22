@@ -139,8 +139,14 @@ $_radios = json_decode($_POST["radios"]);
 $_numbers = json_decode($_POST["numbers"]);
 
 $final_answer_array = array_merge(array($_name, $_sex), $_radios, $_numbers, array($_id));
+$radio_sum = array_sum($_radios);
+$radio_all = count($_radios) * 5;
+$number_sum = array_sum($_numbers);
+$number_all = count($_numbers) * 10;
+$result_tmp = (($radio_sum + $number_sum) / ($radio_all + $number_all)) * 100;
 print_r($final_answer_array);
 $q_quarry = array('a', 'b', 'c', 'd', 'e', 'f');
+$result_array = array('轻度功能障碍', '中度功能障碍', '重度功能障碍', '极重度功能障碍', '完全功能障碍，应详细检查受试对象有无夸大症状');
 
 $finalResult = false;
 
@@ -202,13 +208,17 @@ if (check_connect()) {
                 } elseif ($i == 14) {
                     for ($j = 0; $j < 4; $j++) {
                         $q_tmp = $html_dom->getElementById("q" . $i . $q_quarry[$j]);
-                        $q_tmp->setAttribute('value', $final_answer_array[$i - 1] + $j);
+                        $q_tmp->setAttribute('value', $final_answer_array[$i - 1 + $j]);
                     }
                 } elseif ($i == 15) {
                     $q_tmp = $html_dom->getElementById("q" . $i);
                     $q_tmp->setAttribute('placeholder', $final_answer_array[$i + 2]);
                 }
             }
+            $q_tmp = $html_dom->getElementById("q16");
+            $q_tmp->setAttribute('placeholder', $result_tmp . '%');
+            $q_tmp = $html_dom->getElementById("q17");
+            $q_tmp->setAttribute('placeholder', $result_array[intdiv($result_tmp, 20.001)]);
             $html_dom->saveHTMLFile($file_name);
         } else {
             echo "未创建表，无法操作！\n";
