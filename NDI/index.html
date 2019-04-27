@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>NDI Questionary</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="css/component.css" />
+	<link rel="stylesheet" type="text/css" href="css/cs-select.css" />
+	<link rel="stylesheet" type="text/css" href="css/cs-skin-boxes.css" />
+	<script src="js/modernizr.custom.js"></script>
+</head>
+
+<body>
+	<div class="container">
+
+		<div class="fs-form-wrap" id="fs-form-wrap">
+
+			<div class="fs-title">
+				<h1>NDI问卷调查表</h1>
+			</div>
+
+			<form id="myform" class="fs-form fs-form-full" autocomplete="off">
+
+				<ol class="fs-fields">
+
+					<li>
+						<label class="fs-field-label fs-anim-upper" for="q1" data-info="我们保证不会泄漏个人信息">你叫什么名字?</label>
+						<input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="请输入名字" required />
+					</li>
+					<!--
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="q2" data-info="We won't send you spam, we promise...">你的家庭住址是?</label>
+							<input class="fs-anim-lower" id="q2" name="q2" type="email" placeholder="dean@road.us" required/>
+						</li>
+						-->
+					<li>
+						<label class="fs-field-label fs-anim-upper" for="q2" data-info="我们保证不会泄漏个人信息">性别</label>
+						<input class="fs-anim-lower" id="q2" name="q2" type="text" placeholder="请输入性别" required />
+					</li>
+
+					<li data-input-trigger>
+						<label class="fs-field-label fs-anim-upper" for="q3" data-info="这能帮助我们收集信息">疼痛强度:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q3a" name="q3" type="radio" value="pain_0" />
+								<label for="q3a" class="radio-3-1">我没有颈部、肩部疼痛</label></span>
+							<span><input id="q3b" name="q3" type="radio" value="pain_1" />
+								<label for="q3b" class="radio-3-2">我现在有非常轻微的疼痛</label></span>
+							<span><input id="q3c" name="q3" type="radio" value="pain_2" />
+								<label for="q3c" class="radio-3-3">我现在有中度的疼痛</label></span>
+							<span><input id="q3d" name="q3" type="radio" value="pain_3" />
+								<label for="q3d" class="radio-3-4">我现在有较严重的疼痛</label></span>
+							<span><input id="q3e" name="q3" type="radio" value="pain_4" />
+								<label for="q3e" class="radio-3-5">我现在有非常严重的疼痛</label></span>
+							<span><input id="q3f" name="q3" type="radio" value="pain_5" />
+								<label for="q3f" class="radio-3-6">我疼痛的程度严重的难以想象</label></span>
+						</div>
+					</li>
+
+					<!--<li data-input-trigger>
+						<label class="fs-field-label fs-anim-upper" data-info="We'll make sure to use it all over">为你的网站挑选一种颜色.</label>
+						<select class="cs-select cs-skin-boxes fs-anim-lower">
+							<option value="" disabled selected>Pick a color</option>
+							<option value="#588c75" data-class="color-588c75">#588c75</option>
+							<option value="#b0c47f" data-class="color-b0c47f">#b0c47f</option>
+							<option value="#f3e395" data-class="color-f3e395">#f3e395</option>
+							<option value="#f3ae73" data-class="color-f3ae73">#f3ae73</option>
+							<option value="#da645a" data-class="color-da645a">#da645a</option>
+							<option value="#79a38f" data-class="color-79a38f">#79a38f</option>
+							<option value="#c1d099" data-class="color-c1d099">#c1d099</option>
+							<option value="#f5eaaa" data-class="color-f5eaaa">#f5eaaa</option>
+							<option value="#f5be8f" data-class="color-f5be8f">#f5be8f</option>
+							<option value="#e1837b" data-class="color-e1837b">#e1837b</option>
+							<option value="#9bbaab" data-class="color-9bbaab">#9bbaab</option>
+							<option value="#d1dcb2" data-class="color-d1dcb2">#d1dcb2</option>
+							<option value="#f9eec0" data-class="color-f9eec0">#f9eec0</option>
+							<option value="#f7cda9" data-class="color-f7cda9">#f7cda9</option>
+							<option value="#e8a19b" data-class="color-e8a19b">#e8a19b</option>
+							<option value="#bdd1c8" data-class="color-bdd1c8">#bdd1c8</option>
+							<option value="#e1e7cd" data-class="color-e1e7cd">#e1e7cd</option>
+							<option value="#faf4d4" data-class="color-faf4d4">#faf4d4</option>
+							<option value="#fbdfc9" data-class="color-fbdfc9">#fbdfc9</option>
+							<option value="#f1c1bd" data-class="color-f1c1bd">#f1c1bd</option>
+						</select>
+					</li>
+
+					<li>
+						<label class="fs-field-label fs-anim-upper" for="q4">描述你如何评价你的新网站</label>
+						<textarea class="fs-anim-lower" id="q4" name="q4" placeholder="Describe here"></textarea>
+					</li>
+
+					<li>
+						<label class="fs-field-label fs-anim-upper" for="q5">你认为你的网站值多少钱?</label>
+						<input class="fs-mark fs-anim-lower" id="q5" name="q5" type="number" placeholder="1000" step="100" min="100" />
+					</li>-->
+					<li data-input-trigger>
+						<label class="fs-field-label fs-anim-upper" for="q4" data-info="这能帮助我们收集信息">生活情况(洗漱穿衣等):</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q4a" name="q4" type="radio" value="self_0" />
+								<label for="q4a" class="radio-4-1">我能正常的自理生活不引起特殊疼痛</label></span>
+							<span><input id="q4b" name="q4" type="radio" value="self_1" />
+								<label for="q4b" class="radio-4-2">我能正常的自理生活但引起特殊疼痛</label></span>
+							<span><input id="q4c" name="q4" type="radio" value="self_2" />
+								<label for="q4c" class="radio-4-3">自理生活时会疼痛因此须缓慢、小心</label></span>
+							<span><input id="q4d" name="q4" type="radio" value="self_3" />
+								<label for="q4d" class="radio-4-4">生活大部分自理但需要帮忙</label></span>
+							<span><input id="q4e" name="q4" type="radio" value="self_4" />
+								<label for="q4e" class="radio-4-5">生活每天都需要帮忙</label></span>
+							<span><input id="q4f" name="q4" type="radio" value="self_5" />
+								<label for="q4f" class="radio-4-6">难于洗漱、衣着，因而需卧床</label></span>
+						</div>
+					</li>
+
+					<li data-input-trigger>
+						<label class="fs-field-label fs-anim-upper" for="q5" data-info="这能帮助我们收集信息">提物:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q5a" name="q5" type="radio" value="capable_0" />
+								<label for="q5a" class="radio-5-1">我可以提物而不引起特殊疼痛</label></span>
+							<span><input id="q5b" name="q5" type="radio" value="capable_1" />
+								<label for="q5b" class="radio-5-2">我可以提物但引起特殊疼痛</label></span>
+							<span><input id="q5c" name="q5" type="radio" value="capable_2" />
+								<label for="q5c" class="radio-5-3">疼痛使我不能从地面上提起重物，但如放在台子上我可以移动它</label></span>
+							<span><input id="q5d" name="q5" type="radio" value="capable_3" />
+								<label for="q5d" class="radio-5-4">疼痛使我不能从地面上提起重物，但对于放在台子上的轻、中重物体我可以移动它</label></span>
+							<span><input id="q5e" name="q5" type="radio" value="capable_4" />
+								<label for="q5e" class="radio-5-5">我只能提很轻的物体</label></span>
+							<span><input id="q5f" name="q5" type="radio" value="capable_5" />
+								<label for="q5f" class="radio-5-6">我完全不能提任何物体</label></span>
+						</div>
+					</li>
+
+					<li data-input-trigger>
+						<label class="fs-field-label fs-anim-upper" for="q6" data-info="这能帮助我们收集信息">阅读:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q6a" name="q6" type="radio" value="walk_0" />
+								<label for="q6a" class="radio-6-1">我能长时间阅读而不引起颈部疼痛</label></span>
+							<span><input id="q6b" name="q6" type="radio" value="walk_1" />
+								<label for="q6b" class="radio-6-2">我能长时间阅读只引起轻微颈部疼痛</label></span>
+							<span><input id="q6c" name="q6" type="radio" value="walk_2" />
+								<label for="q6c" class="radio-6-3">我能长时间阅读但会引起中度颈部疼痛</label></span>
+							<span><input id="q6d" name="q6" type="radio" value="walk_3" />
+								<label for="q6d" class="radio-6-4">因为颈部疼痛我不能长时间阅读</label></span>
+							<span><input id="q6e" name="q6" type="radio" value="walk_4" />
+								<label for="q6e" class="radio-6-5">因为颈部疼痛我进行阅读很困难</label></span>
+							<span><input id="q6f" name="q6" type="radio" value="walk_5" />
+								<label for="q6f" class="radio-6-6">因为颈部疼痛我无法进行阅读</label></span>
+						</div>
+					</li>
+
+					<li data-input-trigger>
+						<label class="fs-field-label fs-anim-upper" for="q7" data-info="这能帮助我们收集信息">头疼:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q7a" name="q7" type="radio" value="sit_0" />
+								<label for="q7a" class="radio-7-1">我从不头疼</label></span>
+							<span><input id="q7b" name="q7" type="radio" value="sit_1" />
+								<label for="q7b" class="radio-7-2">我有时有轻度头疼</label></span>
+							<span><input id="q7c" name="q7" type="radio" value="sit_2" />
+								<label for="q7c" class="radio-7-3">我有时有中度头疼</label></span>
+							<span><input id="q7d" name="q7" type="radio" value="sit_3" />
+								<label for="q7d" class="radio-7-4">我经常有中度头疼</label></span>
+							<span><input id="q7e" name="q7" type="radio" value="sit_4" />
+								<label for="q7e" class="radio-7-5">我经常有严重头疼</label></span>
+							<span><input id="q7f" name="q7" type="radio" value="sit_5" />
+								<label for="q7f" class="radio-7-6">我时刻都有头疼</label></span>
+						</div>
+					</li>
+
+					<li data-input-trigger>
+						<label class="fs-field-label fs-anim-upper" for="q8" data-info="这能帮助我们收集信息">集中注意力:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q8a" name="q8" type="radio" value="stand_0" />
+								<label for="q8a" class="radio-8-1">我能很轻易的集中注意力</label></span>
+							<span><input id="q8b" name="q8" type="radio" value="stand_1" />
+								<label for="q8b" class="radio-8-2">我能集中注意力但有一点点困难</label></span>
+							<span><input id="q8c" name="q8" type="radio" value="stand_2" />
+								<label for="q8c" class="radio-8-3">我能集中注意力但有中度的困难</label></span>
+							<span><input id="q8d" name="q8" type="radio" value="stand_3" />
+								<label for="q8d" class="radio-8-4">集中注意力对我来说很困难</label></span>
+							<span><input id="q8e" name="q8" type="radio" value="stand_4" />
+								<label for="q8e" class="radio-8-5">集中注意力对我来说非常困难</label></span>
+							<span><input id="q8f" name="q8" type="radio" value="stand_5" />
+								<label for="q8f" class="radio-8-6">我无法集中注意力</label></span>
+						</div>
+					</li>
+
+					<li data-input-trigger>
+						<label class="fs-field-label fs-anim-upper" for="q9" data-info="这能帮助我们收集信息">工作:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q9a" name="q9" type="radio" value="sleep_0" />
+								<label for="q9a" class="radio-9-1">我想做多少工作都能完成</label></span>
+							<span><input id="q9b" name="q9" type="radio" value="sleep_1" />
+								<label for="q9b" class="radio-9-2">我只能完成我日常的工作</label></span>
+							<span><input id="q9c" name="q9" type="radio" value="sleep_2" />
+								<label for="q9c" class="radio-9-3">我只能完成我日常的工作中的大部分</label></span>
+							<span><input id="q9d" name="q9" type="radio" value="sleep_3" />
+								<label for="q9d" class="radio-9-4">我不能完成我日常的工作</label></span>
+							<span><input id="q9e" name="q9" type="radio" value="sleep_4" />
+								<label for="q9e" class="radio-9-5">我几乎不能工作</label></span>
+							<span><input id="q9f" name="q9" type="radio" value="sleep_5" />
+								<label for="q9f" class="radio-9-6">我根本不能工作</label></span>
+						</div>
+					</li>
+
+					<li data-input-trigger>
+						<label class="fs-field-label fs-anim-upper" for="q10" data-info="这能帮助我们收集信息">开车:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q10a" name="q10" type="radio" value="sex_0" />
+								<label for="q10a" class="radio-10-1">我能长时间开车而不引起颈部疼痛</label></span>
+							<span><input id="q10b" name="q10" type="radio" value="sex_1" />
+								<label for="q10b" class="radio-10-2">我能长时间开车只引起轻微颈部疼痛</label></span>
+							<span><input id="q10c" name="q10" type="radio" value="sex_2" />
+								<label for="q10c" class="radio-10-3">我能长时间开车但会引起中度颈部疼痛</label></span>
+							<span><input id="q10d" name="q10" type="radio" value="sex_3" />
+								<label for="q10d" class="radio-10-4">因为颈部疼痛我不能长时间开车</label></span>
+							<span><input id="q10e" name="q10" type="radio" value="sex_4" />
+								<label for="q10e" class="radio-10-5">因为颈部疼痛我开车很困难</label></span>
+							<span><input id="q10f" name="q10" type="radio" value="sex_5" />
+								<label for="q10f" class="radio-10-6">因为颈部疼痛我无法开车</label></span>
+						</div>
+					</li>
+
+					<li data-input-trigger>
+						<label class="fs-field-label fs-anim-upper" for="q11" data-info="这能帮助我们收集信息">睡眠:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q11a" name="q11" type="radio" value="social_0" />
+								<label for="q11a" class="radio-11-1">我睡眠没问题</label></span>
+							<span><input id="q11b" name="q11" type="radio" value="social_1" />
+								<label for="q11b" class="radio-11-2">我睡眠因为颈部疼痛受到轻微影响(失眠小于1小时)</label></span>
+							<span><input id="q11c" name="q11" type="radio" value="social_2" />
+								<label for="q11c" class="radio-11-3">我睡眠因为颈部疼痛受到轻度影响(失眠1-2小时)</label></span>
+							<span><input id="q11d" name="q11" type="radio" value="social_3" />
+								<label for="q11d" class="radio-11-4">我睡眠因为颈部疼痛受到中度影响(失眠2-3小时)</label></span>
+							<span><input id="q11e" name="q11" type="radio" value="social_4" />
+								<label for="q11e" class="radio-11-5">我睡眠因为颈部疼痛受到重度影响(失眠3-5小时)</label></span>
+							<span><input id="q11f" name="q11" type="radio" value="social_5" />
+								<label for="q11f" class="radio-11-6">我睡眠因为颈部疼痛完全受到影响(失眠5-7小时)</label></span>
+						</div>
+					</li>
+
+					<li data-input-trigger>
+						<label class="fs-field-label fs-anim-upper" for="q12" data-info="这能帮助我们收集信息">娱乐:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q12a" name="q12" type="radio" value="travel_0" />
+								<label for="q12a" class="radio-12-1">我能进行日常的娱乐而没有颈部疼痛 </label></span>
+							<span><input id="q12b" name="q12" type="radio" value="travel_1" />
+								<label for="q12b" class="radio-12-2">我能进行日常的娱乐只引起轻微颈部疼痛</label></span>
+							<span><input id="q12c" name="q12" type="radio" value="travel_2" />
+								<label for="q12c" class="radio-12-3">因为颈部疼痛我只能进行日常的娱乐的大部分而不是全部</label></span>
+							<span><input id="q12d" name="q12" type="radio" value="travel_3" />
+								<label for="q12d" class="radio-12-4">因为颈部疼痛我只能进行小部分的日常的娱乐</label></span>
+							<span><input id="q12e" name="q12" type="radio" value="travel_4" />
+								<label for="q12e" class="radio-12-5">因为颈部疼痛我的日常的娱乐很少</label></span>
+							<span><input id="q12f" name="q12" type="radio" value="travel_5" />
+								<label for="q12f" class="radio-12-6">因为颈部疼痛我无法进行日常娱乐活动</label></span>
+						</div>
+					</li>
+					
+					<li>
+						<label class="fs-field-label fs-anim-upper" for="q13" data-info="我们保证不会泄漏个人信息">输入身份证号</label>
+						<input class="fs-anim-lower" id="q13" name="q13" placeholder="请输入身份证号"
+							pattern="[0-9]{17}([0-9]|x)" title="输入身份证号，有的是“X”" required />
+					</li>
+
+				</ol><!-- /fs-fields -->
+				<button class="fs-submit" id='subButton' type="submit">提交问卷</button>
+			</form><!-- /fs-form -->
+		</div><!-- /fs-form-wrap -->
+	</div><!-- /container -->
+	<script src="js/classie.js"></script>
+	<script src="js/selectFx.js"></script>
+	<script src="js/fullscreenForm.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/Blob.js"></script>
+	<script src="js/kindeditor-all.js"></script>
+	<script src="js/FileSaver.js"></script>
+	<script>
+		(function () {
+			var formWrap = document.getElementById('fs-form-wrap');
+
+			//select module creat
+			[].slice.call(document.querySelectorAll('select.cs-select')).forEach(function (el) {
+				new SelectFx(el, {
+					stickyPlaceholder: false,
+					onChange: function (val) {
+						document.querySelector('span.cs-placeholder').style.backgroundColor = val;
+					}
+				});
+			});
+
+			new FForm(formWrap, {
+				onReview: function () {
+					classie.add(document.body, 'overview'); // for demo purposes only
+				}
+			});
+		})();
+	</script>
+</body>
+
+</html>

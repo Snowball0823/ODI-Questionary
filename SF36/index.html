@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SF36 Questionary</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="css/component.css" />
+	<link rel="stylesheet" type="text/css" href="css/cs-select.css" />
+	<link rel="stylesheet" type="text/css" href="css/cs-skin-boxes.css" />
+	<script src="js/modernizr.custom.js"></script>
+</head>
+
+<body>
+	<div class="container">
+
+		<div class="fs-form-wrap" id="fs-form-wrap">
+
+			<div class="fs-title">
+				<h1>SF36问卷调查表</h1>
+			</div>
+
+			<form id="myform" class="fs-form fs-form-full" autocomplete="off">
+
+				<ol class="fs-fields">
+
+					<li>
+						<label class="fs-field-label fs-anim-upper" for="q1" data-info="我们保证不会泄漏个人信息">你叫什么名字?</label>
+						<input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="请输入名字" required />
+					</li>
+					<!--
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="q2" data-info="We won't send you spam, we promise...">你的家庭住址是?</label>
+							<input class="fs-anim-lower" id="q2" name="q2" type="email" placeholder="dean@road.us" required/>
+						</li>
+						-->
+					<li>
+						<label class="fs-field-label fs-anim-upper" for="q2" data-info="我们保证不会泄漏个人信息">性别</label>
+						<input class="fs-anim-lower" id="q2" name="q2" type="text" placeholder="请输入性别" required />
+					</li>
+
+					<li>
+						<label class="fs-field-label fs-anim-upper" for="q39" data-info="我们保证不会泄漏个人信息">年龄</label>
+						<input class="fs-anim-lower" id="q39" name="q39" type="number" placeholder="请输入年龄" step="1"
+							min="0" max="200" required />
+					</li>
+
+					<li data-input-trigger>
+						<label class="fs-field-label fs-anim-upper" for="q3"
+							data-info="这能帮助我们收集信息">总体来讲，您的健康状况是:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q3a" name="q3" type="radio" value="health_0" />
+								<label for="q3a" class="radio-3-1">差</label></span>
+							<span><input id="q3b" name="q3" type="radio" value="health_1" />
+								<label for="q3b" class="radio-3-2">一般</label></span>
+							<span><input id="q3c" name="q3" type="radio" value="health_2" />
+								<label for="q3c" class="radio-3-3">好</label></span>
+							<span><input id="q3d" name="q3" type="radio" value="health_3" />
+								<label for="q3d" class="radio-3-4">很好</label></span>
+							<span><input id="q3e" name="q3" type="radio" value="health_4" />
+								<label for="q3e" class="radio-3-5">非常好</label></span>
+						</div>
+						<label class="fs-field-label fs-anim-upper" for="q4"
+							data-info="这能帮助我们收集信息">跟1年以前比您觉得自己的健康状况是:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q4a" name="q4" type="radio" value="status_0" />
+								<label for="q4a" class="radio-4-1">比1年前差多了</label></span>
+							<span><input id="q4b" name="q4" type="radio" value="status_1" />
+								<label for="q4b" class="radio-4-2">比1年前差一些</label></span>
+							<span><input id="q4c" name="q4" type="radio" value="status_2" />
+								<label for="q4c" class="radio-4-3">跟1年前差不多</label></span>
+							<span><input id="q4d" name="q4" type="radio" value="status_3" />
+								<label for="q4d" class="radio-4-4">比1年前好一些</label></span>
+							<span><input id="q4e" name="q4" type="radio" value="status_4" />
+								<label for="q4e" class="radio-4-5">比1年前好多了</label></span>
+						</div>
+					</li>
+
+
+					<!--<label class="fs-field-label fs-anim-upper" for="q4" data-info="这能帮助我们收集信息">跟1年以前比您觉得自己的健康状况是:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q4a" name="q4" type="radio" value="pai_0" />
+								<label for="q4a" class="radio-4-1">跟1年以前比您觉得自己的健康状况是</label></span>
+							<span><input id="q4b" name="q4" type="radio" value="pai_1" />
+								<label for="q4b" class="radio-4-2">比1年前好一些</label></span>
+							<span><input id="q4c" name="q4" type="radio" value="pai_2" />
+								<label for="q4c" class="radio-4-3">跟1年前差不多</label></span>
+							<span><input id="q4d" name="q4" type="radio" value="pai_3" />
+								<label for="q4d" class="radio-4-4">比1年前差一些</label></span>
+							<span><input id="q4e" name="q4" type="radio" value="pai_4" />
+								<label for="q4e" class="radio-4-5">比1年前差多了</label></span>
+						</div>
+						<li data-input-trigger>
+						<label class="fs-field-label fs-anim-upper" data-info="We'll make sure to use it all over">为你的网站挑选一种颜色.</label>
+						<select class="cs-select cs-skin-boxes fs-anim-lower">
+							<option value="" disabled selected>Pick a color</option>
+							<option value="#588c75" data-class="color-588c75">#588c75</option>
+							<option value="#b0c47f" data-class="color-b0c47f">#b0c47f</option>
+							<option value="#f3e395" data-class="color-f3e395">#f3e395</option>
+							<option value="#f3ae73" data-class="color-f3ae73">#f3ae73</option>
+							<option value="#da645a" data-class="color-da645a">#da645a</option>
+							<option value="#79a38f" data-class="color-79a38f">#79a38f</option>
+							<option value="#c1d099" data-class="color-c1d099">#c1d099</option>
+							<option value="#f5eaaa" data-class="color-f5eaaa">#f5eaaa</option>
+							<option value="#f5be8f" data-class="color-f5be8f">#f5be8f</option>
+							<option value="#e1837b" data-class="color-e1837b">#e1837b</option>
+							<option value="#9bbaab" data-class="color-9bbaab">#9bbaab</option>
+							<option value="#d1dcb2" data-class="color-d1dcb2">#d1dcb2</option>
+							<option value="#f9eec0" data-class="color-f9eec0">#f9eec0</option>
+							<option value="#f7cda9" data-class="color-f7cda9">#f7cda9</option>
+							<option value="#e8a19b" data-class="color-e8a19b">#e8a19b</option>
+							<option value="#bdd1c8" data-class="color-bdd1c8">#bdd1c8</option>
+							<option value="#e1e7cd" data-class="color-e1e7cd">#e1e7cd</option>
+							<option value="#faf4d4" data-class="color-faf4d4">#faf4d4</option>
+							<option value="#fbdfc9" data-class="color-fbdfc9">#fbdfc9</option>
+							<option value="#f1c1bd" data-class="color-f1c1bd">#f1c1bd</option>
+						</select>
+					</li>
+
+					<li>
+						<label class="fs-field-label fs-anim-upper" for="q4">描述你如何评价你的新网站</label>
+						<textarea class="fs-anim-lower" id="q4" name="q4" placeholder="Describe here"></textarea>
+					</li>
+					<label class="fs-field-label">以下这些问题都和日常活动有关。请您想一想，您的健康状况是否限制了这些活动？如果有限制，程度如何？</label>
+					<li>
+						<label class="fs-field-label fs-anim-upper" for="q5">你认为你的网站值多少钱?</label>
+						<input class="fs-mark fs-anim-lower" id="q5" name="q5" type="number" placeholder="1000" step="100" min="100" />
+					</li>-->
+					<li data-input-trigger>
+						<label
+							class="fs-field-label fs-anim-upper">以下这些问题都和日常活动有关。请您想一想，您的健康状况是否限制了这些活动？如果有限制，程度如何？</label>
+						<label class="fs-field-label fs-anim-upper" for="q5"
+							data-info="这能帮助我们收集信息">重体力活动。如跑步举重、参加剧烈运动等:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q5a" name="q5" type="radio" value="tiredsport_0" />
+								<label for="q5a" class="radio-5-1">限制很大</label></span>
+							<span><input id="q5b" name="q5" type="radio" value="tiredsport_1" />
+								<label for="q5b" class="radio-5-2">有些限制</label></span>
+							<span><input id="q5c" name="q5" type="radio" value="tiredsport_2" />
+								<label for="q5c" class="radio-5-3">毫无限制</label></span>
+						</div>
+					</li>
+
+					<li data-input-trigger>
+						<label class="fs-field-label fs-anim-upper" for="q6"
+							data-info="这能帮助我们收集信息">适度的活动。如移动一张桌子、扫地、打太极拳、做简单体操等:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q6a" name="q6" type="radio" value="fitsport_0" />
+								<label for="q6a" class="radio-6-1">限制很大</label></span>
+							<span><input id="q6b" name="q6" type="radio" value="fitsport_1" />
+								<label for="q6b" class="radio-6-2">有些限制</label></span>
+							<span><input id="q6c" name="q6" type="radio" value="fitsport_2" />
+								<label for="q6c" class="radio-6-3">毫无限制</label></span>
+						</div>
+						<label class="fs-field-label fs-anim-upper" for="q7"
+							data-info="这能帮助我们收集信息">手提日用品。如买菜、购物等:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q7a" name="q7" type="radio" value="life_0" />
+								<label for="q7a" class="radio-7-1">限制很大</label></span>
+							<span><input id="q7b" name="q7" type="radio" value="life_1" />
+								<label for="q7b" class="radio-7-2">有些限制</label></span>
+							<span><input id="q7c" name="q7" type="radio" value="life_2" />
+								<label for="q7c" class="radio-7-3">毫无限制</label></span>
+						</div>
+					</li>
+
+					<li data-input-trigger>
+						<label class="fs-field-label fs-anim-upper" for="q8" data-info="这能帮助我们收集信息">上几层楼梯:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q8a" name="q8" type="radio" value="upstairs_0" />
+								<label for="q8a" class="radio-8-1">限制很大</label></span>
+							<span><input id="q8b" name="q8" type="radio" value="upstairs_1" />
+								<label for="q8b" class="radio-8-2">有些限制</label></span>
+							<span><input id="q8c" name="q8" type="radio" value="upstairs_2" />
+								<label for="q8c" class="radio-8-3">毫无限制</label></span>
+						</div>
+						<label class="fs-field-label fs-anim-upper" for="q9" data-info="这能帮助我们收集信息">上一层楼梯:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q9a" name="q9" type="radio" value="uponestair_0" />
+								<label for="q9a" class="radio-9-1">限制很大</label></span>
+							<span><input id="q9b" name="q9" type="radio" value="uponestair_1" />
+								<label for="q9b" class="radio-9-2">有些限制</label></span>
+							<span><input id="q9c" name="q9" type="radio" value="uponestair_2" />
+								<label for="q9c" class="radio-9-3">毫无限制</label></span>
+						</div>
+					</li>
+
+					<li data-input-trigger>
+						<label class="fs-field-label fs-anim-upper" for="q10" data-info="这能帮助我们收集信息">弯腰、屈膝、下蹲:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q10a" name="q10" type="radio" value="actions_0" />
+								<label for="q10a" class="radio-10-1">限制很大</label></span>
+							<span><input id="q10b" name="q10" type="radio" value="actions_1" />
+								<label for="q10b" class="radio-10-2">有些限制</label></span>
+							<span><input id="q10c" name="q10" type="radio" value="actions_2" />
+								<label for="q10c" class="radio-10-3">毫无限制</label></span>
+						</div>
+						<label class="fs-field-label fs-anim-upper" for="q11"
+							data-info="这能帮助我们收集信息">步行1500米以上的路程:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q11a" name="q11" type="radio" value="walk_1500_0" />
+								<label for="q11a" class="radio-11-1">限制很大</label></span>
+							<span><input id="q11b" name="q11" type="radio" value="walk_1500_1" />
+								<label for="q11b" class="radio-11-2">有些限制</label></span>
+							<span><input id="q11c" name="q11" type="radio" value="walk_1500_2" />
+								<label for="q11c" class="radio-11-3">毫无限制</label></span>
+						</div>
+					</li>
+
+					<li data-input-trigger>
+						<label class="fs-field-label fs-anim-upper" for="q12" data-info="这能帮助我们收集信息">步行1000米的路程:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q12a" name="q12" type="radio" value="work_1000_0" />
+								<label for="q12a" class="radio-12-1">限制很大</label></span>
+							<span><input id="q12b" name="q12" type="radio" value="work_1000_1" />
+								<label for="q12b" class="radio-12-2">有些限制</label></span>
+							<span><input id="q12c" name="q12" type="radio" value="work_1000_2" />
+								<label for="q12c" class="radio-12-3">毫无限制</label></span>
+						</div>
+						<label class="fs-field-label fs-anim-upper" for="q13" data-info="这能帮助我们收集信息">步行100米的路程:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q13a" name="q13" type="radio" value="work_100_0" />
+								<label for="q13a" class="radio-13-1">限制很大</label></span>
+							<span><input id="q13b" name="q13" type="radio" value="work_100_1" />
+								<label for="q13b" class="radio-13-2">有些限制</label></span>
+							<span><input id="q13c" name="q13" type="radio" value="work_100_2" />
+								<label for="q13c" class="radio-13-3">毫无限制</label></span>
+						</div>
+					</li>
+
+					<li data-input-trigger>
+						<label class="fs-field-label fs-anim-upper" for="q14" data-info="这能帮助我们收集信息">自己洗澡、穿衣:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q14a" name="q14" type="radio" value="shower_0" />
+								<label for="q14a" class="radio-14-1">限制很大</label></span>
+							<span><input id="q14b" name="q14" type="radio" value="shower_1" />
+								<label for="q14b" class="radio-14-2">有些限制</label></span>
+							<span><input id="q14c" name="q14" type="radio" value="shower_2" />
+								<label for="q14c" class="radio-14-3">毫无限制</label></span>
+						</div>
+						<label class="fs-field-label fs-anim-upper">在过去4个星期里，您的工作和日常活动有无因为身体健康的原因而出现以下这些问题？</label>
+						<label class="fs-field-label fs-anim-upper" for="q15"
+							data-info="这能帮助我们收集信息">减少了工作或其他活动时间?</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q15a" name="q15" type="radio" value="health_subworktime_0" />
+								<label for="q15a" class="radio-15-1">是</label></span>
+							<span><input id="q15b" name="q15" type="radio" value="health_subworktime_1" />
+								<label for="q15b" class="radio-15-2">否</label></span>
+						</div>
+					</li>
+
+					<li data-input-trigger>
+						<label class="fs-field-label fs-anim-upper" for="q16"
+							data-info="这能帮助我们收集信息">本来想要做的事情只能完成一部分?</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q16a" name="q16" type="radio" value="health_wantedthing_0" />
+								<label for="q16a" class="radio-16-1">是</label></span>
+							<span><input id="q16b" name="q16" type="radio" value="health_wantedthing_1" />
+								<label for="q16b" class="radio-16-2">否</label></span>
+						</div>
+						<label class="fs-field-label fs-anim-upper" for="q17"
+							data-info="这能帮助我们收集信息">想要干的工作或活动种类受到限制?</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q17a" name="q17" type="radio" value="health_wantedwork_0" />
+								<label for="q17a" class="radio-17-1">是</label></span>
+							<span><input id="q17b" name="q17" type="radio" value="health_wantedwork_1" />
+								<label for="q17b" class="radio-17-2">否</label></span>
+						</div>
+					</li>
+
+					<li data-input-trigger>
+						<label class="fs-field-label fs-anim-upper" for="q18"
+							data-info="这能帮助我们收集信息">完成工作或其他活动困难增多（比如需要额外的努力）?</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q18a" name="q18" type="radio" value="health_finshwork_0" />
+								<label for="q18a" class="radio-18-1">是</label></span>
+							<span><input id="q18b" name="q18" type="radio" value="health_finshwork_1" />
+								<label for="q18b" class="radio-18-2">否</label></span>
+						</div>
+						<label
+							class="fs-field-label fs-anim-upper">在过去4个星期里，您的工作和日常活动有无因为情绪的原因（如压抑或忧虑）而出现以下这些问题？</label>
+						<label class="fs-field-label fs-anim-upper" for="q19" data-info="这能帮助我们收集信息">减少了工作或活动时间?</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q19a" name="q19" type="radio" value="mood_subworktime_0" />
+								<label for="q19a" class="radio-19-1">是</label></span>
+							<span><input id="q19b" name="q19" type="radio" value="mood_subworktime_1" />
+								<label for="q19b" class="radio-19-2">否</label></span>
+						</div>
+					</li>
+
+					<li data-input-trigger>
+						<label class="fs-field-label fs-anim-upper" for="q20"
+							data-info="这能帮助我们收集信息">本来想要做的事情只能完成一部分?</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q20a" name="q20" type="radio" value="mood_wantedthing_0" />
+								<label for="q20a" class="radio-20-1">是</label></span>
+							<span><input id="q20b" name="q20" type="radio" value="mood_wantedthing_1" />
+								<label for="q20b" class="radio-20-2">否</label></span>
+						</div>
+						<label class="fs-field-label fs-anim-upper" for="q21" data-info="这能帮助我们收集信息">干事情不如平时仔细?</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q21a" name="q21" type="radio" value="mood_careful_0" />
+								<label for="q21a" class="radio-21-1">是</label></span>
+							<span><input id="q21b" name="q21" type="radio" value="mood_careful_1" />
+								<label for="q21b" class="radio-21-2">否</label></span>
+						</div>
+					</li>
+
+					<li data-input-trigger>
+						<label class="fs-field-label fs-anim-upper" for="q22"
+							data-info="这能帮助我们收集信息">在过去4个星期里，您的健康或情绪不好在多大程度上影响了您与家人、朋友、邻居或集体的正常社会交往？</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q22a" name="q22" type="radio" value="mood_influnce_0" />
+								<label for="q22a" class="radio-22-1">影响非常大</label></span>
+							<span><input id="q22b" name="q22" type="radio" value="mood_influnce_1" />
+								<label for="q22b" class="radio-22-2">影响很大</label></span>
+							<span><input id="q22c" name="q22" type="radio" value="mood_influnce_2" />
+								<label for="q22c" class="radio-22-3">中等影响</label></span>
+							<span><input id="q22d" name="q22" type="radio" value="mood_influnce_3" />
+								<label for="q22d" class="radio-22-4">有一点影响</label></span>
+							<span><input id="q22e" name="q22" type="radio" value="mood_influnce_4" />
+								<label for="q22e" class="radio-22-5">完全没有影响</label></span>
+						</div>
+					</li>
+
+					<li data-input-trigger>
+						<label class="fs-field-label fs-anim-upper" for="q23"
+							data-info="这能帮助我们收集信息">在过去4个星期里，您有身体疼痛吗？</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q23a" name="q23" type="radio" value="pain_0" />
+								<label for="q23a" class="radio-23-1">很严重疼痛</label></span>
+							<span><input id="q23b" name="q23" type="radio" value="pain_1" />
+								<label for="q23b" class="radio-23-2">严重疼痛</label></span>
+							<span><input id="q23c" name="q23" type="radio" value="pain_2" />
+								<label for="q23c" class="radio-23-3">中等疼痛</label></span>
+							<span><input id="q23d" name="q23" type="radio" value="pain_3" />
+								<label for="q23d" class="radio-23-4">有轻微疼痛</label></span>
+							<span><input id="q23e" name="q23" type="radio" value="pain_4" />
+								<label for="q23e" class="radio-23-5">有很轻微疼痛</label></span>
+							<span><input id="q23f" name="q23" type="radio" value="pain_5" />
+								<label for="q23f" class="radio-23-6">根本没有疼痛</label></span>
+						</div>
+						<label class="fs-field-label fs-anim-upper" for="q24"
+							data-info="这能帮助我们收集信息">在过去4个星期里，您的身体疼痛影响了您的工作和家务吗？</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q24a" name="q24" type="radio" value="pain_influence_0" />
+								<label for="q24a" class="radio-24-1">影响非常大 </label></span>
+							<span><input id="q24b" name="q24" type="radio" value="pain_influence_1" />
+								<label for="q24b" class="radio-24-2">影响很大</label></span>
+							<span><input id="q24c" name="q24" type="radio" value="pain_influence_2" />
+								<label for="q24c" class="radio-24-3">中等影响</label></span>
+							<span><input id="q24d" name="q24" type="radio" value="pain_influence_3" />
+								<label for="q24d" class="radio-24-4">有一点影响</label></span>
+							<span><input id="q24e" name="q24" type="radio" value="pain_influence_4" />
+								<label for="q24e" class="radio-24-5">完全没有影响</label></span>
+						</div>
+					</li>
+
+					<li data-input-trigger>
+						<label class="fs-field-label fs-anim-upper">以下这些问题是关于过去1个月里您自己的感觉，对每一条问题所说的事情，您的情况是什么样的？</label>
+						<label class="fs-field-label fs-anim-upper" for="q25" data-info="这能帮助我们收集信息">您觉得生活充实:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q25a" name="q25" type="radio" value="lifesatisfied_0" />
+								<label for="q25a" class="radio-25-1">没有这种感觉</label></span>
+							<span><input id="q25b" name="q25" type="radio" value="lifesatisfied_1" />
+								<label for="q25b" class="radio-25-2">小部分时间</label></span>
+							<span><input id="q25c" name="q25" type="radio" value="lifesatisfied_2" />
+								<label for="q25c" class="radio-25-3">一部分时间</label></span>
+							<span><input id="q25d" name="q25" type="radio" value="lifesatisfied_3" />
+								<label for="q25d" class="radio-25-4">比较多时间</label></span>
+							<span><input id="q25e" name="q25" type="radio" value="lifesatisfied_4" />
+								<label for="q25e" class="radio-25-5">大部分时间</label></span>
+							<span><input id="q25f" name="q25" type="radio" value="lifesatisfied_5" />
+								<label for="q25f" class="radio-25-6">所有的时间</label></span>
+						</div>
+					</li>
+					<li data-input-trigger>
+						<label class="fs-field-label fs-anim-upper" for="q26" data-info="这能帮助我们收集信息">您是一个敏感的人:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q26a" name="q26" type="radio" value="sensitive_0" />
+								<label for="q26a" class="radio-26-1">所有的时间</label></span>
+							<span><input id="q26b" name="q26" type="radio" value="sensitive_1" />
+								<label for="q26b" class="radio-26-2">大部分时间</label></span>
+							<span><input id="q26c" name="q26" type="radio" value="sensitive_2" />
+								<label for="q26c" class="radio-26-3">比较多时间</label></span>
+							<span><input id="q26d" name="q26" type="radio" value="sensitive_3" />
+								<label for="q26d" class="radio-26-4">一部分时间</label></span>
+							<span><input id="q26e" name="q26" type="radio" value="sensitive_4" />
+								<label for="q26e" class="radio-26-5">小部分时间</label></span>
+							<span><input id="q26f" name="q26" type="radio" value="sensitive_5" />
+								<label for="q26f" class="radio-26-6">没有这种感觉</label></span>
+						</div>
+						<label class="fs-field-label fs-anim-upper" for="q27"
+							data-info="这能帮助我们收集信息">您的情绪非常不好，什么事都不能使您高兴起来:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q27a" name="q27" type="radio" value="badmood_0" />
+								<label for="q27a" class="radio-27-1">所有的时间</label></span>
+							<span><input id="q27b" name="q27" type="radio" value="badmood_1" />
+								<label for="q27b" class="radio-27-2">大部分时间</label></span>
+							<span><input id="q27c" name="q27" type="radio" value="badmood_2" />
+								<label for="q27c" class="radio-27-3">比较多时间</label></span>
+							<span><input id="q27d" name="q27" type="radio" value="badmood_3" />
+								<label for="q27d" class="radio-27-4">一部分时间</label></span>
+							<span><input id="q27e" name="q27" type="radio" value="badmood_4" />
+								<label for="q27e" class="radio-27-5">小部分时间</label></span>
+							<span><input id="q27f" name="q27" type="radio" value="badmood_5" />
+								<label for="q27f" class="radio-27-6">没有这种感觉</label></span>
+						</div>
+					</li>
+
+					<li data-input-trigger>
+						<label class="fs-field-label fs-anim-upper" for="q28" data-info="这能帮助我们收集信息">您的心理很平静:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q28a" name="q28" type="radio" value="quite_0" />
+								<label for="q28a" class="radio-28-1">没有这种感觉</label></span>
+							<span><input id="q28b" name="q28" type="radio" value="quite_1" />
+								<label for="q28b" class="radio-28-2">小部分时间</label></span>
+							<span><input id="q28c" name="q28" type="radio" value="quite_2" />
+								<label for="q28c" class="radio-28-3">一部分时间</label></span>
+							<span><input id="q28d" name="q28" type="radio" value="quite_3" />
+								<label for="q28d" class="radio-28-4">比较多时间</label></span>
+							<span><input id="q28e" name="q28" type="radio" value="quite_4" />
+								<label for="q28e" class="radio-28-5">大部分时间</label></span>
+							<span><input id="q28f" name="q28" type="radio" value="quite_5" />
+								<label for="q28f" class="radio-28-6">所有的时间</label></span>
+						</div>
+						<label class="fs-field-label fs-anim-upper" for="q29" data-info="这能帮助我们收集信息">您做事精力充沛:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q29a" name="q29" type="radio" value="fullenergy_0" />
+								<label for="q29a" class="radio-29-1">没有这种感觉</label></span>
+							<span><input id="q29b" name="q29" type="radio" value="fullenergy_1" />
+								<label for="q29b" class="radio-29-2">小部分时间</label></span>
+							<span><input id="q29c" name="q29" type="radio" value="fullenergy_2" />
+								<label for="q29c" class="radio-29-3">一部分时间</label></span>
+							<span><input id="q29d" name="q29" type="radio" value="fullenergy_3" />
+								<label for="q29d" class="radio-29-4">比较多时间</label></span>
+							<span><input id="q29e" name="q29" type="radio" value="fullenergy_4" />
+								<label for="q29e" class="radio-29-5">大部分时间</label></span>
+							<span><input id="q29f" name="q29" type="radio" value="fullenergy_5" />
+								<label for="q29f" class="radio-29-6">所有的时间</label></span>
+						</div>
+					</li>
+
+					<li data-input-trigger>
+						<label class="fs-field-label fs-anim-upper" for="q30" data-info="这能帮助我们收集信息">您的情绪低落:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q30a" name="q30" type="radio" value="downmood_0" />
+								<label for="q30a" class="radio-30-1">所有的时间</label></span>
+							<span><input id="q30b" name="q30" type="radio" value="downmood_1" />
+								<label for="q30b" class="radio-30-2">大部分时间</label></span>
+							<span><input id="q30c" name="q30" type="radio" value="downmood_2" />
+								<label for="q30c" class="radio-30-3">比较多时间</label></span>
+							<span><input id="q30d" name="q30" type="radio" value="downmood_3" />
+								<label for="q30d" class="radio-30-4">一部分时间</label></span>
+							<span><input id="q30e" name="q30" type="radio" value="downmood_4" />
+								<label for="q30e" class="radio-30-5">小部分时间</label></span>
+							<span><input id="q30f" name="q30" type="radio" value="downmood_5" />
+								<label for="q30f" class="radio-30-6">没有这种感觉</label></span>
+						</div>
+						<label class="fs-field-label fs-anim-upper" for="q31" data-info="这能帮助我们收集信息">您觉得筋疲力尽:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q31a" name="q31" type="radio" value="tired_0" />
+								<label for="q31a" class="radio-31-1">所有的时间</label></span>
+							<span><input id="q31b" name="q31" type="radio" value="tired_1" />
+								<label for="q31b" class="radio-31-2">大部分时间</label></span>
+							<span><input id="q31c" name="q31" type="radio" value="tired_2" />
+								<label for="q31c" class="radio-31-3">比较多时间</label></span>
+							<span><input id="q31d" name="q31" type="radio" value="tired_3" />
+								<label for="q31d" class="radio-31-4">一部分时间</label></span>
+							<span><input id="q31e" name="q31" type="radio" value="tired_4" />
+								<label for="q31e" class="radio-31-5">小部分时间</label></span>
+							<span><input id="q31f" name="q31" type="radio" value="tired_5" />
+								<label for="q31f" class="radio-31-6">没有这种感觉</label></span>
+						</div>
+					</li>
+
+					<li data-input-trigger>
+						<label class="fs-field-label fs-anim-upper" for="q32" data-info="这能帮助我们收集信息">您是个快乐的人:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q32a" name="q32" type="radio" value="happy_0" />
+								<label for="q32a" class="radio-32-1">没有这种感觉</label></span>
+							<span><input id="q32b" name="q32" type="radio" value="happy_1" />
+								<label for="q32b" class="radio-32-2">小部分时间</label></span>
+							<span><input id="q32c" name="q32" type="radio" value="happy_2" />
+								<label for="q32c" class="radio-32-3">一部分时间</label></span>
+							<span><input id="q32d" name="q32" type="radio" value="happy_3" />
+								<label for="q32d" class="radio-32-4">比较多时间</label></span>
+							<span><input id="q32e" name="q32" type="radio" value="happy_4" />
+								<label for="q32e" class="radio-32-5">大部分时间</label></span>
+							<span><input id="q32f" name="q32" type="radio" value="happy_5" />
+								<label for="q32f" class="radio-32-6">所有的时间</label></span>
+						</div>
+						<label class="fs-field-label fs-anim-upper" for="q33" data-info="这能帮助我们收集信息">您感觉厌烦:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q33a" name="q33" type="radio" value="hate_0" />
+								<label for="q33a" class="radio-33-1">所有的时间</label></span>
+							<span><input id="q33b" name="q33" type="radio" value="hate_1" />
+								<label for="q33b" class="radio-33-2">大部分时间</label></span>
+							<span><input id="q33c" name="q33" type="radio" value="hate_2" />
+								<label for="q33c" class="radio-33-3">比较多时间</label></span>
+							<span><input id="q33d" name="q33" type="radio" value="hate_3" />
+								<label for="q33d" class="radio-33-4">一部分时间</label></span>
+							<span><input id="q33e" name="q33" type="radio" value="hate_4" />
+								<label for="q33e" class="radio-33-5">小部分时间</label></span>
+							<span><input id="q33f" name="q33" type="radio" value="hate_5" />
+								<label for="q33f" class="radio-33-6">没有这种感觉</label></span>
+						</div>
+					</li>
+
+					<li data-input-trigger>
+						<label class="fs-field-label fs-anim-upper" for="q34"
+							data-info="这能帮助我们收集信息">不健康影响了您的社会活动（如走亲访友）:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q34a" name="q34" type="radio" value="unhealthinfluence_0" />
+								<label for="q34a" class="radio-34-1">所有的时间</label></span>
+							<span><input id="q34b" name="q34" type="radio" value="unhealthinfluence_1" />
+								<label for="q34b" class="radio-34-2">大部分时间</label></span>
+							<span><input id="q34c" name="q34" type="radio" value="unhealthinfluence_2" />
+								<label for="q34c" class="radio-34-3">比较多时间</label></span>
+							<span><input id="q34d" name="q34" type="radio" value="unhealthinfluence_3" />
+								<label for="q34d" class="radio-34-4">一部分时间</label></span>
+							<span><input id="q34e" name="q34" type="radio" value="unhealthinfluence_4" />
+								<label for="q34e" class="radio-34-5">小部分时间</label></span>
+							<span><input id="q34f" name="q34" type="radio" value="unhealthinfluence_5" />
+								<label for="q34f" class="radio-34-6">没有这种感觉</label></span>
+						</div>
+					</li>
+
+					<li data-input-trigger>
+						<label class="fs-field-label fs-anim-upper" for="q35" data-info="这能帮助我们收集信息">我好象比别人容易生病:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q35a" name="q35" type="radio" value="sick_0" />
+								<label for="q35a" class="radio-35-1">绝对正确</label></span>
+							<span><input id="q35b" name="q35" type="radio" value="sick_1" />
+								<label for="q35b" class="radio-35-2">大部分正确</label></span>
+							<span><input id="q35c" name="q35" type="radio" value="sick_2" />
+								<label for="q35c" class="radio-35-3">不能肯定</label></span>
+							<span><input id="q35d" name="q35" type="radio" value="sick_3" />
+								<label for="q35d" class="radio-35-4">大部分错误</label></span>
+							<span><input id="q35e" name="q35" type="radio" value="sick_4" />
+								<label for="q35e" class="radio-35-5">绝对错误</label></span>
+						</div>
+						<label class="fs-field-label fs-anim-upper" for="q36" data-info="这能帮助我们收集信息">我跟周围人一样健康:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q36a" name="q36" type="radio" value="healthytoo_0" />
+								<label for="q36a" class="radio-36-1">绝对错误</label></span>
+							<span><input id="q36b" name="q36" type="radio" value="healthytoo_1" />
+								<label for="q36b" class="radio-36-2">大部分错误</label></span>
+							<span><input id="q36c" name="q36" type="radio" value="healthytoo_2" />
+								<label for="q36c" class="radio-36-3">不能肯定</label></span>
+							<span><input id="q36d" name="q36" type="radio" value="healthytoo_3" />
+								<label for="q36d" class="radio-36-4">大部分正确</label></span>
+							<span><input id="q36e" name="q36" type="radio" value="healthytoo_4" />
+								<label for="q36e" class="radio-36-5">绝对正确</label></span>
+						</div>
+					</li>
+
+					<li data-input-trigger>
+						<label class="fs-field-label fs-anim-upper" for="q37"
+							data-info="这能帮助我们收集信息">我认为我的健康状况在变坏:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q37a" name="q37" type="radio" value="healthbebad_0" />
+								<label for="q37a" class="radio-37-1">绝对正确</label></span>
+							<span><input id="q37b" name="q37" type="radio" value="healthbebad_1" />
+								<label for="q37b" class="radio-37-2">大部分正确</label></span>
+							<span><input id="q37c" name="q37" type="radio" value="healthbebad_2" />
+								<label for="q37c" class="radio-37-3">不能肯定</label></span>
+							<span><input id="q37d" name="q37" type="radio" value="healthbebad_3" />
+								<label for="q37d" class="radio-37-4">大部分错误</label></span>
+							<span><input id="q37e" name="q37" type="radio" value="healthbebad_4" />
+								<label for="q37e" class="radio-37-5">绝对错误</label></span>
+						</div>
+						<label class="fs-field-label fs-anim-upper" for="q38" data-info="这能帮助我们收集信息">我的健康状况非常好:</label>
+						<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+							<span><input id="q38a" name="q38" type="radio" value="healthgood_0" />
+								<label for="q38a" class="radio-38-1">绝对错误</label></span>
+							<span><input id="q38b" name="q38" type="radio" value="healthgood_1" />
+								<label for="q38b" class="radio-38-2">大部分错误</label></span>
+							<span><input id="q38c" name="q38" type="radio" value="healthgood_2" />
+								<label for="q38c" class="radio-38-3">不能肯定</label></span>
+							<span><input id="q38d" name="q38" type="radio" value="healthgood_3" />
+								<label for="q38d" class="radio-38-4">大部分正确</label></span>
+							<span><input id="q38e" name="q38" type="radio" value="healthgood_4" />
+								<label for="q38e" class="radio-38-5">绝对正确</label></span>
+						</div>
+					</li>
+
+					<li>
+						<label class="fs-field-label fs-anim-upper" for="q40" data-info="我们保证不会泄漏个人信息">输入身份证号</label>
+						<input class="fs-anim-lower" id="q40" name="q40" placeholder="请输入身份证号"
+							pattern="[0-9]{17}([0-9]|x)" title="输入身份证号，有的是“X”" required />
+					</li>
+
+				</ol><!-- /fs-fields -->
+				<button class="fs-submit" id='subButton' type="submit">提交问卷</button>
+			</form><!-- /fs-form -->
+		</div><!-- /fs-form-wrap -->
+	</div><!-- /container -->
+	<script src="js/classie.js"></script>
+	<script src="js/selectFx.js"></script>
+	<script src="js/fullscreenForm.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/Blob.js"></script>
+	<script src="js/kindeditor-all.js"></script>
+	<script src="js/FileSaver.js"></script>
+	<script>
+		(function () {
+			var formWrap = document.getElementById('fs-form-wrap');
+
+			//select module creat
+			[].slice.call(document.querySelectorAll('select.cs-select')).forEach(function (el) {
+				new SelectFx(el, {
+					stickyPlaceholder: false,
+					onChange: function (val) {
+						document.querySelector('span.cs-placeholder').style.backgroundColor = val;
+					}
+				});
+			});
+
+			new FForm(formWrap, {
+				onReview: function () {
+					classie.add(document.body, 'overview'); // for demo purposes only
+				}
+			});
+		})();
+	</script>
+</body>
+
+</html>
