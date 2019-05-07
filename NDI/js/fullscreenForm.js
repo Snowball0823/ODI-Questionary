@@ -227,7 +227,7 @@
 				async: true,
 				cache: false,
 				type: 'POST',
-				url: "/php/deliver.php",
+				url: "./php/deliver.php",
 				data: {
 					name: patientName,
 					sex: patientSex,

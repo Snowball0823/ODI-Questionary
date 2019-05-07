@@ -11,5 +11,5 @@ $mysql_table = 'ndi_patients_info';
 
 $tamplate_file = '../tamplate/tamplate.html';
 
-//$desktop_path = '/Users/Mike/Desktop/';
+$file_path = '../';
 ?>

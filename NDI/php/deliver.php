@@ -188,7 +188,7 @@ if (check_connect()) {
                 $_string_radios . "," . $_data_time;
             insert_data($mysqli, $mysql_table, $data_label, $final_data);
             echo $final_data;
-            $file_name = '../' . $_name . '_NDI_' . date('Y-m-d') . time() . ".html";
+            $file_name = $file_path . $_name . '_NDI_' . date('Y-m-d') . time() . ".html";
             echo copy($tamplate_file, $file_name);
             $html_dom = new DOMDocument;
             $html_dom->loadHTMLFile($file_name);

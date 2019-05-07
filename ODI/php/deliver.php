@@ -156,7 +156,7 @@ $mysqli->set_charset("utf8"); //或者 $mysqli->query("set names 'utf8'")
 //面向对象的昂视屏蔽了连接产生的错误，需要通过函数来判断
 $table_info = "(
         private_id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-        patien_id  varchar(20) NOT NULL,(string)
+        patien_id  varchar(20) NOT NULL,
         name varchar(100) NOT NULL,
         sex  varchar(2) NOT NULL,
         pain int(11) NOT NULL,
@@ -193,7 +193,7 @@ if (check_connect()) {
                 $_string_radios . "," . $_string_numbers . "," . $_data_time;
             insert_data($mysqli, $mysql_table, $data_label, $final_data);
             echo $final_data;
-            $file_name = '../' . $_name . '_ODI_' . date('Y-m-d') . time() . ".html";
+            $file_name = $file_path . $_name . '_ODI_' . date('Y-m-d') . time() . ".html";
             echo copy($tamplate_file, $file_name);
             $html_dom = new DOMDocument;
             $html_dom->loadHTMLFile($file_name);
